@@ -1,0 +1,118 @@
+1.Question
+
+package tasks;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class tasksixthone {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver = new FirefoxDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.google.com");
+		
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.navigate().refresh();
+		
+		driver.close();
+	}
+}
+OUTPUT:
+
+https://www.google.com/
+------------------------------------------------------------------------------------------------------------
+
+2.Question
+
+package tasks;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class tasksixthtwo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String title = "STORE";
+
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		driver.navigate().to("https://www.demoblaze.com/");
+		
+		String ti = driver.getTitle();
+		System.out.println(ti);
+		if (title.equals(ti)) {
+			System.out.println("Page landed on the correct webpage");
+		}
+		else {
+			System.out.println("Page not landed on correct webpage");
+		}
+		driver.close();	
+	}
+}
+
+OUTPUT:
+
+STORE
+Page landed on the correct webpage
+
+------------------------------------------------------------------------------------------------------------
+
+3.Question
+
+package tasks;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class tasksixththree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver = new ChromeDriver();
+		
+        driver.manage().window().maximize();
+        
+        driver.navigate().to("https://www.wikipedia.org/");
+        
+        driver.findElement(By.xpath("//input[@id='searchInput']")).sendKeys("Artifical Intelligence");
+        
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        
+        driver.findElement(By.xpath("//li[@id='toc-History']//child::div[@class='vector-toc-text']")).click();
+     
+        String s1 = driver.getTitle();
+        
+        System.out.println(s1);
+        
+        driver.quit();
+	}
+}
+
+OUTPUT:
+
+Artificial intelligence - Wikipedia
+
+
+------------------------------------------------------------------------------------------------------------------
