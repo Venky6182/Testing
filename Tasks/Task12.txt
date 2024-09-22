@@ -1,0 +1,70 @@
+Convert to Array
+
+package org.example;
+
+import java.util.ArrayList;
+
+public class ConvertToArray {
+
+        public static void main(String[] args){
+
+
+            ArrayList<String> a = new ArrayList();
+            a.add("banana");
+            a.add("apple");
+            a.add("orange");
+            a.add("watermelon");
+       String Arr[] = a.toArray(new String[0]);
+            for(String str: Arr) {
+                System.out.println(str);
+            }
+
+        }
+    }
+-----------------------------------------------------------------------------
+Employee map
+
+package org.example;
+
+import java.util.*;
+
+public class EmployeeMap {
+
+    public static void main(String[] args){
+        TreeMap<Integer, String > a = new TreeMap<>();
+
+        a.put(4 , "aura");
+        a.put(2 , "evan");
+        a.put(3, "rocky");
+        a.put(1, "venkat");
+        List<String> names = new ArrayList<>(a.values());
+        Collections.sort(names);
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+    }
+}
+--------------------------------------------------------------------
+Remove elements
+package org.example;
+
+import java.util.ArrayList;
+
+public class RemoveElements {
+    public static void main(String[] args){
+
+
+        ArrayList<String> a = new ArrayList();
+        a.add("banana");
+        a.add("apple");
+        a.add("orange");
+        a.add("watermelon");
+        for(String str: a) {
+            System.out.println(str);
+        }
+        a.clear();
+    }
+}
+-------------------------------------------------------------------
